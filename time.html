@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIME</title>
+</head>
+<body>
+<div class="time">
+    <span id="h"></span>
+    <span id="m"></span>
+<!--    <span id="s"></span>-->
+</div>
+<script>
+    function show () {
+        let date = new Date();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        if (second < 10) {
+            second = "0" + second;
+        }
+
+        document.getElementById("h").innerHTML=hour;
+        document.getElementById("m").innerHTML=minute;
+        // document.getElementById("s").innerHTML=second;
+        setTimeout(show, 1000*30);
+    }
+    show();
+</script>
+</body>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .time{
+        font-family: SAKURATA,serif;
+        width: 100vw;
+        height: 100vh;
+        font-size: 12vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: cadetblue;
+        color: aliceblue;
+    }
+    span{
+        width: 25vw;
+        font-family: SAKURATA,serif;
+        text-align: center;
+    }
+</style>
+</html>
